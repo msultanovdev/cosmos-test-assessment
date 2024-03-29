@@ -1,10 +1,16 @@
+import { Route, Routes } from "react-router-dom";
 import "./app.css";
+import { rootRoutes } from "./routes";
 
 function App() {
   return (
-    <div className="app">
-      Cosmos Test
-    </div>
+    <>
+      <Routes>
+        {rootRoutes.map((route) => {
+          return <Route Component={route.Component} path={route.path} />;
+        })}
+      </Routes>
+    </>
   );
 }
 

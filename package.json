@@ -11,6 +11,7 @@
     "@types/react": "^18.2.73",
     "@types/react-dom": "^18.2.23",
     "esri-loader": "^3.7.0",
+    "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
@@ -22,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "npx prettier --write ."
   },
   "eslintConfig": {
     "extends": [
