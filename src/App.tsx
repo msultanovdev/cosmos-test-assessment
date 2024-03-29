@@ -7,7 +7,13 @@ function App() {
     <>
       <Routes>
         {rootRoutes.map((route) => {
-          return <Route Component={route.Component} path={route.path} />;
+          return (
+            <Route
+              Component={route.Component}
+              path={route.path}
+              key={route.path}
+            />
+          );
         })}
       </Routes>
     </>
