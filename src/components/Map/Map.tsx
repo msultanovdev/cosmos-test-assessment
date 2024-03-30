@@ -5,6 +5,7 @@ import Map from "@arcgis/core/Map";
 import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer";
 import Graphic from "@arcgis/core/Graphic";
 import PictureMarkerSymbol from "@arcgis/core/symbols/PictureMarkerSymbol";
+import Point from "@arcgis/core/geometry/Point";
 
 const MapComponent = () => {
   const mapRef = useRef<HTMLDivElement>(null);
@@ -30,14 +31,12 @@ const MapComponent = () => {
       height: "32px",
     });
 
-    const point = {
-      type: "point",
+    const point = new Point({
       longitude: 69.336241,
       latitude: 41.34226,
-    };
+    });
 
     const markerGraphic = new Graphic({
-      //@ts-ignore
       geometry: point,
       symbol: markerSymbol,
       popupTemplate: {
