@@ -1,9 +1,23 @@
 export const csvDecoder = async (csvPath: string) => {
   const res = await fetch(csvPath);
   const reader = res.body?.getReader();
-  const result = await reader?.read();
   const decoder = new TextDecoder("utf-8");
-  return decoder.decode(result?.value);
+
+  if (!reader) {
+    throw new Error("Unable to get reader from response body.");
+  }
+
+  let csvData = "";
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    if (value) {
+      const chunk = decoder.decode(value, { stream: true });
+      csvData += chunk;
+    }
+  }
+
+  return csvData;
 };
 
 interface DatePoints {
