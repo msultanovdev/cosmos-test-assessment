@@ -35,6 +35,10 @@ const options = {
       type: "time" as const,
       time: {
         unit: "day" as const,
+        unitStepSize: 1,
+        displayFormats: {
+          day: "dd MMM, yyyy",
+        },
       },
     },
     y: {
@@ -86,7 +90,10 @@ const ChartComponent: React.FC = () => {
 
   return (
     <div>
-      <h2>Data Visualization</h2>
+      <h2>
+        The Line Chart illustrates the displacement of points at 12-day
+        intervals from the beginning of 2019 to the end of 2020.
+      </h2>
       {data ? <Line data={data} options={options} /> : "Loading..."}
     </div>
   );
