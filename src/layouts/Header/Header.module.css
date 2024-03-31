@@ -17,6 +17,7 @@
   transition: 0.3s all;
 }
 .header a.active {
+  border-color: white;
   background-color: teal;
   color: white;
 }
