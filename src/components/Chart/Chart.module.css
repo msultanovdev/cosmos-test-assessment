@@ -2,3 +2,8 @@
   text-align: center;
   color: white;
 }
+
+.chartContainer {
+  width: 100%;
+  height: 40vh;
+}

@@ -31,6 +31,7 @@ ChartJS.register(
 );
 
 const options = {
+  maintainAspectRatio: false,
   scales: {
     x: {
       ticks: {
@@ -116,7 +117,13 @@ const ChartComponent: React.FC = () => {
         The Line Chart illustrates the displacement of points at 12-day
         intervals from the beginning of 2019 to the end of 2020.
       </h2>
-      {data ? <Line data={data} options={options} /> : "Loading..."}
+      {data ? (
+        <div className={cl.chartContainer}>
+          <Line width={"100%"} data={data} options={options} />
+        </div>
+      ) : (
+        "Loading..."
+      )}
     </div>
   );
 };
