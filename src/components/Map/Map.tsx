@@ -52,7 +52,7 @@ const MapComponent = () => {
 
   return (
     <>
-      <div ref={mapRef} style={{ width: "100%", height: "90vh" }}></div>
+      <div ref={mapRef} style={{ width: "100%", height: "85vh" }}></div>
     </>
   );
 };
