@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as Papa from "papaparse";
+import cl from "./Chart.module.css";
 import AscendingCsvPath from "../../db/data/ascending.csv";
 import DescendingCsvPath from "../../db/data/descending.csv";
 import { calculateDateAverages, csvDecoder } from "../../utils/helpers";
@@ -32,6 +33,13 @@ ChartJS.register(
 const options = {
   scales: {
     x: {
+      ticks: {
+        color: "#fff",
+      },
+      grid: {
+        color: "rgba(255,255,255,.2)",
+        borderColor: "white",
+      },
       type: "time" as const,
       time: {
         unit: "day" as const,
@@ -42,9 +50,17 @@ const options = {
       },
     },
     y: {
+      ticks: {
+        color: "#fff",
+      },
+      grid: {
+        color: "rgba(255,255,255,.2)",
+        borderColor: "white",
+      },
       title: {
         display: true,
         text: "Average Points",
+        color: "#fff",
       },
     },
   },
@@ -70,16 +86,22 @@ const ChartComponent: React.FC = () => {
           {
             label: "Ascending",
             data: Object.values(ascData),
-            borderColor: "rgb(75, 192, 192)",
+            borderColor: "orange",
+            backgroundColor: "yellow",
             borderWidth: 2,
             fill: false,
+            pointBackgroundColor: "yellow",
+            pointHoverBackgroundColor: "white",
           },
           {
             label: "Descending",
             data: Object.values(desData),
-            borderColor: "rgb(102, 100, 22)",
+            borderColor: "yellowgreen",
+            backgroundColor: "green",
             borderWidth: 2,
             fill: false,
+            pointBackgroundColor: "green",
+            pointHoverBackgroundColor: "white",
           },
         ],
       };
@@ -89,7 +111,7 @@ const ChartComponent: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className={cl.chart}>
       <h2>
         The Line Chart illustrates the displacement of points at 12-day
         intervals from the beginning of 2019 to the end of 2020.
