@@ -35,7 +35,7 @@ const options = {
   scales: {
     x: {
       ticks: {
-        color: "#fff",
+        color: "rgba(255, 255, 255, 0.844)",
       },
       grid: {
         color: "rgba(255,255,255,.2)",
@@ -61,7 +61,7 @@ const options = {
       title: {
         display: true,
         text: "Average Points",
-        color: "#fff",
+        color: "rgba(255, 255, 255, 0.844)",
       },
     },
   },

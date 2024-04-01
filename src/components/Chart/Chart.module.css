@@ -1,10 +1,30 @@
 .chart {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid white;
+  border-radius: 16px;
   text-align: center;
-  color: white;
+  color: rgba(255, 255, 255, 0.844);
   font-size: 0.8rem;
+}
+
+.chart h2 {
+  margin: 15px 0;
 }
 
 .chartContainer {
   width: 100%;
   height: 40vh;
+}
+
+@media screen and (max-width: 999px) {
+  .chart {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .chart {
+    width: 98%;
+  }
 }
