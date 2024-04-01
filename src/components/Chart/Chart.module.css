@@ -1,7 +1,7 @@
 .chart {
   width: 80%;
   margin: 20px auto;
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.844);
   border-radius: 16px;
   text-align: center;
   color: rgba(255, 255, 255, 0.844);
@@ -9,6 +9,7 @@
 }
 
 .chart h2 {
+  padding: 0 3px;
   margin: 15px 0;
 }
 
