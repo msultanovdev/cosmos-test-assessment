@@ -1,10 +1,26 @@
-import "./app.css";
+import { Route, Routes } from "react-router-dom";
+import { rootRoutes } from "./routes";
+import Header from "./layouts/Header/Header";
+import Container from "./layouts/Container/Container";
 
 function App() {
   return (
-    <div className="app">
-      Cosmos Test
-    </div>
+    <>
+      <Header />
+      <Container>
+        <Routes>
+          {rootRoutes.map((route) => {
+            return (
+              <Route
+                Component={route.Component}
+                path={route.path}
+                key={route.path}
+              />
+            );
+          })}
+        </Routes>
+      </Container>
+    </>
   );
 }
 
